@@ -1,0 +1,13 @@
+.persons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.person {
+  width: 40%;
+  border: 1px solid grey;
+  border-radius: 10px;
+  cursor: pointer;
+}
