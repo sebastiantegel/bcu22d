@@ -12,3 +12,10 @@ I detta projekt tittar vi på koncept som hjälper oss att skriva ut html i vår
 - [Villkordstyrd rendering](https://reactjs.org/docs/conditional-rendering.html)
 - [Händelser](https://reactjs.org/docs/handling-events.html)
 - [Listor](https://reactjs.org/docs/lists-and-keys.html)
+
+## 3 - state
+
+Här börjar vi introducera state, först med hjälp av ett tal sedan objekt och till slut med en lista av objekt. 
+
+- [useState](https://reactjs.org/docs/state-and-lifecycle.html)
+- [useState (beta)](https://beta.reactjs.org/reference/react/useState)
