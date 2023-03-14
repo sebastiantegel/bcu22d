@@ -19,3 +19,10 @@ Här börjar vi introducera state, först med hjälp av ett tal sedan objekt och
 
 - [useState](https://reactjs.org/docs/state-and-lifecycle.html)
 - [useState (beta)](https://beta.reactjs.org/reference/react/useState)
+
+## 4- props
+
+Nu skall vi skicka information mellan komponenter. Vi börjar med att titta på en komponent som tar emot enklare data. Därefter skickar vi objekt och till slut använder vi listor med objekt för att hantera vår data och skapa html. Vi börjar även introducera hur vi kan skapa återanvändningsbara komponenter och fundera lite kring detta.
+
+- [props](https://reactjs.org/docs/components-and-props.html)
+- [props (beta)](https://beta.reactjs.org/learn/passing-props-to-a-component)
