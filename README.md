@@ -33,3 +33,10 @@ I detta projekt tittar vi lite närmare på formulär och validering. Vi försö
 
 - [forms](https://reactjs.org/docs/forms.html)
 - [forms (beta)](https://beta.reactjs.org/reference/react-dom/components#form-components)
+
+## 6 - Lifting state up
+
+Nu kommer vi att utmana oss själva genom att använda alla koncept vi har gjort hittills för att få en helhet i en applikation. Vi vill kunna lägga till/ta bort objekt ur en lista genom att använda en bra komponentstruktur. 
+
+- [Lifting state up](https://react.dev/learn/sharing-state-between-components#lifting-state-up-by-example)
+- [Lifting state up (tutorial)](https://react.dev/learn/tutorial-tic-tac-toe#lifting-state-up)
