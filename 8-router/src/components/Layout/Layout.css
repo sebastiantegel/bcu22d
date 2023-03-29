@@ -1,0 +1,20 @@
+header {
+  height: 75px;
+  border: 1px solid green;
+}
+
+main {
+  min-height: 65vh;
+  border: 1px solid blue;
+}
+
+footer {
+  height: 150px;
+  border: 1px solid red;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

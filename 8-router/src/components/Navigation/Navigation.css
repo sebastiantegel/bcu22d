@@ -1,0 +1,23 @@
+nav {
+  width: 100%;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 15px;
+  justify-content: flex-end;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: black;
+  border-bottom: 1px solid rgba(0, 0, 0, 0);
+  transition: border 0.2s;
+}
+
+nav ul li a.active {
+  border-bottom: 1px solid rgba(0, 0, 0, 1);
+}

@@ -1,0 +1,11 @@
+.movies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.movie {
+  width: 40%;
+  cursor: pointer;
+}
