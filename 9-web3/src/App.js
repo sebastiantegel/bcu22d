@@ -2,10 +2,12 @@ import { useEffect, useState } from "react";
 import Web3 from "web3";
 import { PERSON_LIST_ABI, PERSON_LIST_ADDRESS } from "./config";
 import "./App.css";
+import { UserForm } from "./components/UserForm";
 
 function App() {
   const [account, setAccount] = useState();
-  const [indexes, setIndexes] = useState([]);
+  const [contract, setContract] = useState();
+  const [persons, setPersons] = useState([]);
 
   useEffect(() => {
     const getAccounts = async () => {
@@ -20,23 +22,55 @@ function App() {
         PERSON_LIST_ADDRESS
       );
 
-      let indexes = await personContract.methods.getIndexList().call();
-      console.log(indexes);
+      setContract(personContract);
 
-      const html = indexes.map((index) => {
-        return <li>{index}</li>;
-      });
-      setIndexes(html);
+      await populatePersons(personContract);
     };
 
     if (account) return;
     getAccounts();
   });
 
+  const populatePersons = async (contract) => {
+    let indexes = await contract.methods.getIndexList().call(); // [1, 2, 3]
+
+    let temp = [];
+    for (let i = 0; i < indexes.length; i++) {
+      const person = await contract.methods.persons(indexes[i]).call(); // 1  ->   persons(1)   ->  person { ... }
+      console.log(person);
+      temp.push(person);
+    }
+
+    setPersons(temp);
+  };
+
+  const html = persons.map((person) => {
+    return (
+      <ul key={person.id}>
+        <li>{person.id}</li>
+        <li>{person.name}</li>
+        <li>{person.age}</li>
+        <li>{person.isMarried.toString()}</li>
+      </ul>
+    );
+  });
+
+  const createPerson = async (user) => {
+    await contract.methods
+      .createPerson(user.name, user.age, user.isMarried)
+      .send({ from: account })
+      .once("receipt", async (receipt) => {
+        console.log(receipt);
+
+        populatePersons(contract);
+      });
+  };
+
   return (
     <div className="App">
       <p>Account: {account}</p>
-      <ul>{indexes}</ul>
+      <UserForm addPerson={createPerson}></UserForm>
+      {html}
     </div>
   );
 }
